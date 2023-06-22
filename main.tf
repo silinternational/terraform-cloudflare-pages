@@ -30,7 +30,6 @@ resource "cloudflare_pages_project" "ui" {
       environment_variables = {
         NODE_VERSION = "18"
       }
-      fail_open = true
     }
   }
 
