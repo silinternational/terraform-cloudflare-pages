@@ -49,3 +49,15 @@ resource "cloudflare_pages_domain" "ui" {
   domain       = "${var.subdomain}.${var.domain}"
   project_name = cloudflare_pages_project.ui.name
 }
+
+resource "cloudflare_record" "ui" {
+  zone_id = data.cloudflare_zone.domain.id
+  name    = var.subdomain
+  value   = cloudflare_pages_project.ui.subdomain
+  type    = "CNAME"
+  proxied = true
+}
+
+data "cloudflare_zone" "domain" {
+  name = var.domain
+}
