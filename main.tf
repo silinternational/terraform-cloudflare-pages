@@ -46,6 +46,6 @@ resource "cloudflare_pages_project" "ui" {
 
 resource "cloudflare_pages_domain" "ui" {
   account_id   = var.cloudflare_account_id
-  domain       = var.domain
+  domain       = "${var.subdomain}.${var.domain}"
   project_name = cloudflare_pages_project.ui.name
 }
