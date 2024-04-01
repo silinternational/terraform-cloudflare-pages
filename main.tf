@@ -19,17 +19,13 @@ resource "cloudflare_pages_project" "ui" {
 
   deployment_configs {
     preview {
-      compatibility_date = "2023-06-22"
-      environment_variables = {
-        NODE_VERSION = "18"
-      }
+      compatibility_date    = "2023-06-22"
+      environment_variables = var.preview_env_vars
     }
 
     production {
-      compatibility_date = "2023-06-22"
-      environment_variables = {
-        NODE_VERSION = "18"
-      }
+      compatibility_date    = "2023-06-22"
+      environment_variables = var.production_env_vars
     }
   }
 
