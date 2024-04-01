@@ -8,6 +8,9 @@ module "test" {
   repo_owner            = "anonymous"
   domain                = "example.com"
   subdomain             = "test-app"
+  preview_env_vars = {
+    TEST = "123"
+  }
 }
 
 provider "aws" {

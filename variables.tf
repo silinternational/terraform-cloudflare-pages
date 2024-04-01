@@ -51,3 +51,19 @@ variable "subdomain" {
   description = "subdomain to use for the Cloudflare Pages domain, e.g. app"
   type        = string
 }
+
+variable "production_env_vars" {
+  description = "environment variables for production deployment, default: { NODE_VERSION = \"18\" }"
+  type        = map(string)
+  default = {
+    NODE_VERSION = "18"
+  }
+}
+
+variable "preview_env_vars" {
+  description = "environment variables for preview deployment, default: { NODE_VERSION = \"18\" }"
+  type        = map(string)
+  default = {
+    NODE_VERSION = "18"
+  }
+}
