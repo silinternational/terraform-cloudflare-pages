@@ -53,17 +53,17 @@ variable "subdomain" {
 }
 
 variable "production_env_vars" {
-  description = "environment variables for production deployment, default: { NODE_VERSION = \"18\" }"
+  description = "environment variables for production deployment, default: { NODE_VERSION = \"22\" }"
   type        = map(string)
   default = {
-    NODE_VERSION = "18"
+    NODE_VERSION = "22"
   }
 }
 
 variable "preview_env_vars" {
-  description = "environment variables for preview deployment, default: { NODE_VERSION = \"18\" }"
+  description = "environment variables for preview deployment, default: { NODE_VERSION = \"22\" }"
   type        = map(string)
   default = {
-    NODE_VERSION = "18"
+    NODE_VERSION = "22"
   }
 }

@@ -9,12 +9,13 @@ module "test" {
   domain                = "example.com"
   subdomain             = "test-app"
   preview_env_vars = {
-    TEST = "123"
+    TEST = "dev"
   }
-}
 
-provider "aws" {
-  region = "us-east-2"
+  production_env_vars = {
+    ENV = "production"
+  }
+
 }
 
 terraform {
